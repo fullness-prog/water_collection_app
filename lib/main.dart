@@ -7,6 +7,9 @@ import 'screens/settings_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Fullness will UNCOMMENT these lines later:
+  // await DatabaseService().init();
+  // await NotificationService().init();
   // await Hive.initFlutter(); // Fullness will uncomment this later
   runApp(const MyApp());
 }
