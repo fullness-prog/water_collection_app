@@ -37,13 +37,16 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward();
-    // REMOVED: _navigateToHome(); - No automatic navigation
+    _navigateToHome(); // - automatic navigation
   }
 
-  void _navigateToHome() {
-    // Navigate only when called (on tap)
+  void _navigateToHome() async {
+    // 1. Wait for 2 or 3 seconds
+    await Future.delayed(const Duration(seconds: 3));
+
+    // 2. Check if the widget is still in the tree before navigating
     if (mounted) {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/setup');
     }
   }
 
@@ -57,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: _navigateToHome, // Navigate when screen is tapped
+        // onTap: _navigateToHome, // Navigate when screen is tapped
         child: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(

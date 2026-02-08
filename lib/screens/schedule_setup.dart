@@ -62,21 +62,21 @@ class _ScheduleSetupScreenState extends State<ScheduleSetupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF2C2C2C),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pushReplacementNamed(context, '/'),
-        ),
-        title: const Text(
-          'Create Water Collection Schedule',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   // backgroundColor: const Color(0xFF2C2C2C),
+      //   // leading: IconButton(
+      //   //   icon: const Icon(Icons.arrow_back, color: Colors.white),
+      //   //   onPressed: () => Navigator.pushReplacementNamed(context, '/'),
+      //   // ),
+      //   title: const Text(
+      //     'Create Water Collection Schedule',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontSize: 16,
+      //       fontWeight: FontWeight.w500,
+      //     ),
+      //   ),
+      // ),
       body: Column(
         children: [
           Expanded(
