@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
-// Import screens (even if they are empty for now, create the files first!)
+// Add these two lines to connect your backend logic
+import 'services/database_service.dart';
+import 'services/notification_service.dart';
+// Keep the screen imports provided by your teammate
 import 'screens/splash_screen.dart';
 import 'screens/schedule_setup.dart';
 import 'screens/reminder_list.dart';
 import 'screens/settings_screen.dart';
 
 void main() async {
+  // 1. Required for native hardware communication
   WidgetsFlutterBinding.ensureInitialized();
-  // Fullness will UNCOMMENT these lines later:
-  // await DatabaseService().init();
-  // await NotificationService().init();
-  // await Hive.initFlutter(); // Fullness will uncomment this later
+
+  // 2. Initialize your Notification Engine
+  await NotificationService.instance.init();
+
+  // 3. Wake up your Database Engine
+  await DatabaseService.instance.database;
+
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
